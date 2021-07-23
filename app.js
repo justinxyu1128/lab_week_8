@@ -8,8 +8,21 @@
 // step 3 create a paragraph template using a template litteral
 
 // step 5 add the paragraph template you just created to the first div using innerHTML
-function colorParagraph() {
-    const paragraph = document.querySelector(.first-paragraph);
-    paragraph.classList.add("paragraph-color");
 
+function colorParagraph() {
+    const p = document.querySelector(".first-paragraph")
+    p.classList.add("paragraph-color")
 }
+
+colorParagraph()
+
+function createParagraph(text) {
+    return `<p>${text}<p>`
+}
+
+function addNewParagraph(template) {
+    const div = document.querySelector("#first-div")
+    div.innerHTML += template
+}
+
+addNewParagraph(createParagraph("this is a new paragraph"))
